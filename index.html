@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas M Yabiku | Portfólio & TI</title>
+    <meta name="description" content="Portfólio de Lucas M Yabiku - Estudante Técnico de TI no Instituto Educacional Raphael Di Santo. Foco em programação, sistemas e soluções visuais.">
+
+    <!-- Google Fonts: Anton (Persona 5 Titles), Bebas Neue, Space Grotesk (Textos), Space Mono (Etiquetas) e Arsenal -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <!-- Folha de estilo única -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Filtro SVG para granulação analógica (Film Grain Texture) -->
+    <svg class="global-svg-filters" aria-hidden="true">
+        <filter id="film-grain">
+            <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch" result="noise" />
+            <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.15 0" />
+        </filter>
+    </svg>
+
+    <!-- Overlay de Textura de Grão e Halftone -->
+    <div class="grain-overlay" aria-hidden="true"></div>
+
+    <!-- Faixa vermelha diagonal de transição de tela -->
+    <div class="p5-wipe-transition" id="pageWipe" aria-hidden="true">
+        <div class="wipe-band"></div>
+        <div class="wipe-text">LUCAS M YABIKU</div>
+    </div>
+
+    <!-- Cursor personalizado: Mira tracejada -->
+    <div class="p5-cursor" id="customCursor" aria-hidden="true">
+        <div class="reticle-core"></div>
+        <div class="reticle-lines">
+            <span class="line-t"></span>
+            <span class="line-b"></span>
+            <span class="line-l"></span>
+            <span class="line-r"></span>
+        </div>
+        <div class="reticle-text" id="cursorLabel">FOCO</div>
+    </div>
+
+    <!-- ==========================================================================
+         CABEÇALHO FIXO
+         ========================================================================== -->
+    <header class="site-header" id="header">
+        <div class="header-inner">
+            <a href="index.html" class="brand-monogram" data-nav-page="index.html">
+                <span class="brand-accent">LMY</span>
+                <span class="brand-sub">/ DEV</span>
+            </a>
+
+            <div class="status-indicator" title="Status de disponibilidade">
+                <span class="status-dot"></span>
+                <span class="status-text">DISPONÍVEL PARA PROJETOS</span>
+            </div>
+
+            <div class="header-meta">
+                <span class="meta-location">SP, BRASIL</span>
+                <button type="button" class="theme-toggle" id="themeToggle" aria-label="Alternar modo claro e escuro">
+                    <span class="theme-icon theme-sun" aria-hidden="true">☼</span>
+                    <span class="theme-icon theme-moon" aria-hidden="true">☽</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==========================================================================
+         CONTEÚDO PRINCIPAL
+         ========================================================================== -->
+    <main id="content">
+
+        <!-- ======================================================================
+             1. SEÇÃO INÍCIO: MENU RADIAL PERSONA 5 + SEUNGHYUK INTERACTION
+             ====================================================================== -->
+        <section class="section-hero active" id="inicio" data-section-name="INÍCIO">
+            <!-- Canvas interativo com as linhas finas e palavras de personalidade flutuantes -->
+            <canvas id="p5LinesCanvas" class="hero-lines-canvas"></canvas>
+
+            <div class="hero-stage">
+                <!-- Estilhaços pontiagudos de fundo (SVG Polygons) -->
+                <svg class="p5-shards-svg" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true">
+                    <polygon id="shard-sobre" class="p5-shard" points="500,500 280,180 340,150" />
+                    <polygon id="shard-projetos" class="p5-shard" points="500,500 780,240 730,190" />
+                    <polygon id="shard-contato" class="p5-shard" points="500,500 820,720 750,780" />
+                    <polygon id="shard-inicio" class="p5-shard" points="500,500 220,700 270,760" />
+                </svg>
+
+                <!-- Brilho vermelho de combate atrás do personagem -->
+                <div class="hero-character-glow" aria-hidden="true"></div>
+
+                <!-- Silhueta Central ("O Personagem") -->
+                <div class="hero-character-wrap" id="heroCharacter">
+                    <img src="assets/images/hero-silhouette.png" 
+                         alt="Silhueta de Lucas M Yabiku" 
+                         class="character-silhouette" 
+                         id="characterImg">
+                    
+                    <!-- Placa de Identificação do Personagem -->
+                    <div class="character-nameplate">
+                        <span class="nameplate-code">16y. // TI</span>
+                        <h1 class="character-fullname">
+                            LUCAS M <span class="text-red">YABIKU</span>
+                        </h1>
+                        <p class="character-role">Estudante Técnico de Tecnologia da Informação</p>
+                    </div>
+                </div>
+
+                <!-- MENU RADIAL ESTILO EDITORIAL ANGULAR -->
+                <nav class="p5-radial-menu" aria-label="Menu de Navegação Principal">
+                    
+                    <!-- ITEM: SOBRE (TOP-LEFT / TRIANGLE) -->
+                    <a href="sobre.html" class="p5-menu-item item-sobre" data-nav-page="sobre.html" data-shard="shard-sobre" id="menuItemSobre">
+                        <div class="item-banner">
+                            <span class="btn-symbol triangle">△</span>
+                            <span class="item-title">SOBRE</span>
+                        </div>
+                        <span class="item-subtitle">Quem eu sou</span>
+                    </a>
+
+                    <!-- ITEM: PROJETOS (TOP-RIGHT / SQUARE) -->
+                    <a href="projetos.html" class="p5-menu-item item-projetos" data-nav-page="projetos.html" data-shard="shard-projetos" id="menuItemProjetos">
+                        <div class="item-banner">
+                            <span class="btn-symbol square">▢</span>
+                            <span class="item-title">PROJETOS</span>
+                        </div>
+                        <span class="item-subtitle">Meus trabalhos</span>
+                    </a>
+
+                    <!-- ITEM: CONTATO (BOTTOM-RIGHT / CIRCLE) -->
+                    <a href="contato.html" class="p5-menu-item item-contato" data-nav-page="contato.html" data-shard="shard-contato" id="menuItemContato">
+                        <div class="item-banner">
+                            <span class="btn-symbol circle">◯</span>
+                            <span class="item-title">CONTATO</span>
+                        </div>
+                        <span class="item-subtitle">Fale comigo</span>
+                    </a>
+
+                    <!-- ITEM: INÍCIO (BOTTOM-LEFT / CROSS) -->
+                    <a href="index.html" class="p5-menu-item item-inicio" data-nav-page="index.html" data-shard="shard-inicio" id="menuItemInicio">
+                        <div class="item-banner">
+                            <span class="btn-symbol cross">✕</span>
+                            <span class="item-title">INÍCIO</span>
+                        </div>
+                        <span class="item-subtitle">Página Inicial</span>
+                    </a>
+
+                </nav>
+
+                <!-- Frase de Apresentação Estilizada -->
+                <div class="hero-punchline">
+                    <p>"Transformo ideias complexas em <span class="text-red">soluções visuais</span> simples e funcionais."</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Script único -->
+    <script src="script.js"></script>
+</body>
+</html>

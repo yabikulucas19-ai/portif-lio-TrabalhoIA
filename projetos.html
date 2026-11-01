@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas M Yabiku | PROJETOS // Trabalhos Práticos</title>
+    <meta name="description" content="Projetos desenvolvidos por Lucas M Yabiku para as disciplinas de Tecnologia da Informação do Instituto Raphael Di Santo.">
+
+    <!-- Google Fonts: Anton (P5 Titles), Bebas Neue, Space Grotesk, Space Mono e Arsenal -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <!-- Folha de estilo única do portfólio -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-subpage page-projetos">
+
+    <!-- Filtro SVG para textura de filme analógico -->
+    <svg class="global-svg-filters" aria-hidden="true">
+        <filter id="film-grain">
+            <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch" result="noise" />
+            <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.15 0" />
+        </filter>
+    </svg>
+
+    <!-- Overlay de Textura de Grão e Halftone -->
+    <div class="grain-overlay" aria-hidden="true"></div>
+
+    <!-- Faixa vermelha diagonal de transição de tela -->
+    <div class="p5-wipe-transition" id="pageWipe" aria-hidden="true">
+        <div class="wipe-band"></div>
+        <div class="wipe-text">LUCAS M YABIKU</div>
+    </div>
+
+    <!-- Cursor de mira personalizada -->
+    <div class="p5-cursor" id="customCursor" aria-hidden="true">
+        <div class="reticle-core"></div>
+        <div class="reticle-lines">
+            <span class="line-t"></span>
+            <span class="line-b"></span>
+            <span class="line-l"></span>
+            <span class="line-r"></span>
+        </div>
+        <div class="reticle-text" id="cursorLabel">FOCO</div>
+    </div>
+
+    <!-- CABEÇALHO FIXO -->
+    <header class="site-header" id="header">
+        <div class="header-inner">
+            <a href="index.html" class="brand-monogram" data-nav-page="index.html">
+                <span class="brand-accent">LMY</span>
+                <span class="brand-sub">/ DEV</span>
+            </a>
+
+            <div class="status-indicator" title="Status de disponibilidade">
+                <span class="status-dot"></span>
+                <span class="status-text">DISPONÍVEL PARA PROJETOS</span>
+            </div>
+
+            <div class="header-meta">
+                <a href="index.html" class="nav-back-link" data-nav-page="index.html">◀ MENU PRINCIPAL</a>
+                <button type="button" class="theme-toggle" id="themeToggle" aria-label="Alternar modo claro e escuro">
+                    <span class="theme-icon theme-sun" aria-hidden="true">☼</span>
+                    <span class="theme-icon theme-moon" aria-hidden="true">☽</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTEÚDO DA PÁGINA: PROJETOS (RODA CIRCULAR DE CARTAS 3D) -->
+    <main class="subpage-main card-wheel-main">
+
+        <div class="card-wheel-stage">
+
+            <!-- Rotor 3D que gira com as cartas -->
+            <div class="card-wheel-rotor" id="cardWheelRotor">
+
+                <!-- PROJETO 01: PROGRAMAÇÃO -->
+                <article class="wheel-card" data-card-index="0">
+                    <div class="card-face">
+                        <span class="card-number">01</span>
+                        <div class="card-category-strip">
+                            <span class="strip-category">PROGRAMAÇÃO</span>
+                            <span class="strip-status">CONCLUÍDO</span>
+                        </div>
+                        <div class="card-terminal">
+                            <div class="terminal-mock">
+                                <span class="terminal-prompt">$</span> <code>execute_sorting_algorithm --optimize</code>
+                                <div class="terminal-sub">COMPLEXITY: O(n log n) // STABLE</div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h2 class="card-title">Algoritmos de Otimização &amp; Estruturas de Dados</h2>
+                            <p class="card-desc">Construção de rotinas em lógica de programação pura, manipulando vetores, listas dinâmicas e algoritmos de busca e ordenação rápida.</p>
+                            <div class="card-tags">
+                                <span class="mini-tag">LÓGICA</span>
+                                <span class="mini-tag">ALGORITMOS</span>
+                                <span class="mini-tag">AUTOMAÇÃO</span>
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <a href="contato.html" class="card-link" data-nav-page="contato.html">SOLICITAR CÓDIGO ➔</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PROJETO 02: BANCO DE DADOS -->
+                <article class="wheel-card" data-card-index="1">
+                    <div class="card-face">
+                        <span class="card-number">02</span>
+                        <div class="card-category-strip">
+                            <span class="strip-category">BANCO DE DADOS</span>
+                            <span class="strip-status">CONCLUÍDO</span>
+                        </div>
+                        <div class="card-terminal">
+                            <div class="terminal-mock">
+                                <span class="terminal-prompt">&gt;</span> <code>SELECT schema FROM relational_db WHERE verified = true;</code>
+                                <div class="terminal-sub">INDEX SCAN: COMPLETED // 0.02ms</div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h2 class="card-title">Modelagem Relacional &amp; Consultas SQL Avançadas</h2>
+                            <p class="card-desc">Elaboração de diagramas DER, normalização até a 3ª Forma Normal (3FN), criação de tabelas, chaves primárias/estrangeiras e queries analíticas com JOINs.</p>
+                            <div class="card-tags">
+                                <span class="mini-tag">SQL</span>
+                                <span class="mini-tag">MODELAGEM DER</span>
+                                <span class="mini-tag">NORMALIZAÇÃO</span>
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <a href="contato.html" class="card-link" data-nav-page="contato.html">SOLICITAR SCHEMA ➔</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PROJETO 03: DEV SOFTWARE -->
+                <article class="wheel-card" data-card-index="2">
+                    <div class="card-face">
+                        <span class="card-number">03</span>
+                        <div class="card-category-strip">
+                            <span class="strip-category">DEV SOFTWARE</span>
+                            <span class="strip-status">CONCLUÍDO</span>
+                        </div>
+                        <div class="card-terminal">
+                            <div class="terminal-mock">
+                                <span class="terminal-prompt">#</span> <code>build_modular_ui --framework=none --vanilla=true</code>
+                                <div class="terminal-sub">BUNDLE: 0 DEPENDENCIES // 100% LIGHTHOUSE</div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h2 class="card-title">Plataforma Web Modular &amp; Experiência de Usuário</h2>
+                            <p class="card-desc">Sistemas de interface modular desenvolvidos com HTML5 semântico, CSS3 moderno e JS ES6+ nativo, com foco em ergonomia, contraste e performance extrema.</p>
+                            <div class="card-tags">
+                                <span class="mini-tag">FRONT-END</span>
+                                <span class="mini-tag">UI/UX</span>
+                                <span class="mini-tag">MODULAR</span>
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <a href="contato.html" class="card-link" data-nav-page="contato.html">VER IMPLEMENTAÇÃO ➔</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PROJETO 04: SISTEMAS OPERACIONAIS -->
+                <article class="wheel-card" data-card-index="3">
+                    <div class="card-face">
+                        <span class="card-number">04</span>
+                        <div class="card-category-strip">
+                            <span class="strip-category">SISTEMAS OPERACIONAIS</span>
+                            <span class="strip-status">CONCLUÍDO</span>
+                        </div>
+                        <div class="card-terminal">
+                            <div class="terminal-mock">
+                                <span class="terminal-prompt">$</span> <code>systemctl status core_services --all</code>
+                                <div class="terminal-sub">KERNEL: OPTIMIZED // PERMISSIONS: SECURE</div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h2 class="card-title">Configuração de Ambientes, Kernel &amp; Shell Script</h2>
+                            <p class="card-desc">Particionamento de disco, gestão de processos e memória, configuração de variáveis de ambiente, automações em batch/bash e virtualização de sistemas operacionais.</p>
+                            <div class="card-tags">
+                                <span class="mini-tag">LINUX / WINDOWS</span>
+                                <span class="mini-tag">BASH SCRIPT</span>
+                                <span class="mini-tag">VIRTUALIZAÇÃO</span>
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <a href="contato.html" class="card-link" data-nav-page="contato.html">VER SCRIPTS ➔</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PROJETO 05: SUPORTE TÉCNICO -->
+                <article class="wheel-card" data-card-index="4">
+                    <div class="card-face">
+                        <span class="card-number">05</span>
+                        <div class="card-category-strip">
+                            <span class="strip-category">SUPORTE TÉCNICO</span>
+                            <span class="strip-status">CONCLUÍDO</span>
+                        </div>
+                        <div class="card-terminal">
+                            <div class="terminal-mock">
+                                <span class="terminal-prompt">&gt;</span> <code>network_diagnostics --test-latency --gateway=ok</code>
+                                <div class="terminal-sub">HARDWARE HEALTH: 100% // PING: 1ms</div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h2 class="card-title">Manutenção, Troubleshooting &amp; Cabeamento de Redes</h2>
+                            <p class="card-desc">Diagnóstico de problemas em placas, montagem e teste de componentes de hardware, crimpagem de conectores RJ-45 (Padrões T568A/B) e endereçamento IP.</p>
+                            <div class="card-tags">
+                                <span class="mini-tag">HARDWARE</span>
+                                <span class="mini-tag">REDES</span>
+                                <span class="mini-tag">TROUBLESHOOTING</span>
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <a href="contato.html" class="card-link" data-nav-page="contato.html">RELATÓRIO TÉCNICO ➔</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PROJETO 06: OPERAÇÃO DE APPS -->
+                <article class="wheel-card" data-card-index="5">
+                    <div class="card-face">
+                        <span class="card-number">06</span>
+                        <div class="card-category-strip">
+                            <span class="strip-category">OPERAÇÃO DE APPS</span>
+                            <span class="strip-status">CONCLUÍDO</span>
+                        </div>
+                        <div class="card-terminal">
+                            <div class="terminal-mock">
+                                <span class="terminal-prompt">$</span> <code>deploy_workspace_pipeline --sync-tools</code>
+                                <div class="terminal-sub">INTEGRATION: ACTIVE // SUITE CONFIGURED</div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h2 class="card-title">Integração de Softwares, Pipelines &amp; Produtividade</h2>
+                            <p class="card-desc">Parametrização avançada de pacotes de escritório, suítes colaborativas corporativas, configuração de editores técnicos, automação de backups e integração de fluxos.</p>
+                            <div class="card-tags">
+                                <span class="mini-tag">PIPELINES</span>
+                                <span class="mini-tag">PRODUTIVIDADE</span>
+                                <span class="mini-tag">INTEGRAÇÃO</span>
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <a href="contato.html" class="card-link" data-nav-page="contato.html">VER FLUXOS ➔</a>
+                        </div>
+                    </div>
+                </article>
+
+            </div><!-- /.card-wheel-rotor -->
+
+            <!-- Painel de informações do card ativo -->
+            <div class="wheel-info-panel" id="wheelInfoPanel">
+                <span class="info-panel-number" id="infoPanelNumber">01</span>
+                <span class="info-panel-title" id="infoPanelTitle">Algoritmos de Otimização &amp; Estruturas de Dados</span>
+                <span class="info-panel-hint">SCROLL OU SETAS PARA NAVEGAR</span>
+            </div>
+
+            <!-- Setas de navegação -->
+            <button type="button" class="wheel-nav-prev" id="wheelNavPrev" aria-label="Projeto anterior">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="18,4 8,14 18,24"></polyline>
+                </svg>
+            </button>
+            <button type="button" class="wheel-nav-next" id="wheelNavNext" aria-label="Próximo projeto">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="10,4 20,14 10,24"></polyline>
+                </svg>
+            </button>
+
+            <!-- Contador de posição -->
+            <div class="wheel-counter" id="wheelCounter">
+                <span class="counter-current">01</span>
+                <span class="counter-sep">/</span>
+                <span class="counter-total">06</span>
+            </div>
+
+        </div><!-- /.card-wheel-stage -->
+
+    </main>
+
+    <!-- Script único -->
+    <script src="script.js"></script>
+</body>
+</html>

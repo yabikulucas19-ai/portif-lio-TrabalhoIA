@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas M Yabiku | SOBRE // Trajetória & Perfil</title>
+    <meta name="description" content="Perfil técnico e trajetória de Lucas M Yabiku - Estudante Técnico de TI no Instituto Educacional Raphael Di Santo.">
+
+    <!-- Google Fonts: Anton (P5 Titles), Bebas Neue, Space Grotesk, Space Mono e Arsenal -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <!-- Folha de estilo única do portfólio -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-subpage page-sobre">
+
+    <!-- Filtro SVG para textura de filme analógico -->
+    <svg class="global-svg-filters" aria-hidden="true">
+        <filter id="film-grain">
+            <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch" result="noise" />
+            <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.15 0" />
+        </filter>
+    </svg>
+
+    <!-- Overlay de Textura de Grão e Halftone -->
+    <div class="grain-overlay" aria-hidden="true"></div>
+
+    <!-- Faixa vermelha diagonal de transição de tela -->
+    <div class="p5-wipe-transition" id="pageWipe" aria-hidden="true">
+        <div class="wipe-band"></div>
+        <div class="wipe-text">LUCAS M YABIKU</div>
+    </div>
+
+    <!-- Cursor de mira personalizada -->
+    <div class="p5-cursor" id="customCursor" aria-hidden="true">
+        <div class="reticle-core"></div>
+        <div class="reticle-lines">
+            <span class="line-t"></span>
+            <span class="line-b"></span>
+            <span class="line-l"></span>
+            <span class="line-r"></span>
+        </div>
+        <div class="reticle-text" id="cursorLabel">FOCO</div>
+    </div>
+
+    <!-- CABEÇALHO FIXO -->
+    <header class="site-header" id="header">
+        <div class="header-inner">
+            <a href="index.html" class="brand-monogram" data-nav-page="index.html">
+                <span class="brand-accent">LMY</span>
+                <span class="brand-sub">/ DEV</span>
+            </a>
+
+            <div class="status-indicator" title="Status de disponibilidade">
+                <span class="status-dot"></span>
+                <span class="status-text">DISPONÍVEL PARA PROJETOS</span>
+            </div>
+
+            <div class="header-meta">
+                <a href="index.html" class="nav-back-link" data-nav-page="index.html">◀ MENU PRINCIPAL</a>
+                <button type="button" class="theme-toggle" id="themeToggle" aria-label="Alternar modo claro e escuro">
+                    <span class="theme-icon theme-sun" aria-hidden="true">☼</span>
+                    <span class="theme-icon theme-moon" aria-hidden="true">☽</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTEÚDO DA PÁGINA: STATUS / SOBRE -->
+    <main class="subpage-main" id="sobreMain">
+
+        <!-- SISTEMA DE ILUMINAÇÃO SPOTLIGHT CINEMATOGRÁFICO -->
+        <!-- Luminária suspensa (renderizada NA FRENTE do conteúdo, z-index próprio) -->
+        <div class="spotlight-lamp-fixture" id="spotlightLamp" aria-hidden="true">
+            <div class="lamp-mount"></div>
+            <div class="lamp-wire"></div>
+            <div class="lamp-head" id="spotlightLampHead">
+                <div class="lamp-pivot-ring"></div>
+                <div class="lamp-hood"></div>
+                <div class="lamp-lens"></div>
+                <div class="lamp-volumetric-beam"></div>
+            </div>
+        </div>
+        <!-- Campo de penumbra suave (renderizado ATRÁS do conteúdo) -->
+        <div class="spotlight-stage" id="spotlightStage" aria-hidden="true">
+            <div class="spotlight-light-field" id="spotlightLightField"></div>
+        </div>
+
+        <div class="subpage-container">
+
+            <!-- Banner do Título em Ângulo -->
+            <div class="p5-page-title-banner" data-spotlight-target tabindex="0">
+                <div class="title-meta-tag">
+                    <span class="tag-number">01</span>
+                    <span class="tag-label">TRAJETÓRIA // PERFIL</span>
+                </div>
+                <h1 class="p5-page-title">
+                    QUEM <span class="text-red">EU SOU</span>
+                </h1>
+                <div class="p5-badge-strip">
+                    <span class="badge-item">ESTUDANTE DE TI</span>
+                    <span class="badge-item">DESENVOLVIMENTO & INFRA</span>
+                    <span class="badge-item highlight">16y. // 2º ANO TI</span>
+                </div>
+            </div>
+
+            <!-- Grid do Perfil Técnico -->
+            <div class="p5-status-grid">
+                
+                <!-- Coluna Esquerda: Retrato -->
+                <div class="status-col-profile">
+                    <div class="p5-portrait-card" data-spotlight-target tabindex="0">
+                        <div class="p5-portrait-frame">
+                            <img src="assets/images/lucas-portrait.png" alt="Retrato de Lucas M Yabiku" class="p5-portrait-img">
+                        </div>
+                        <div class="p5-portrait-tag">
+                            <span class="tag-title">INSTITUTO RAPHAEL DI SANTO</span>
+                            <span class="tag-sub">ENSINO MÉDIO TÉCNICO // TI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coluna Direita: Biografia e Habilidades -->
+                <div class="status-col-bio">
+                    
+                    <!-- Caixa de Diálogo Estilizada -->
+                    <div class="p5-dialog-box" data-spotlight-target tabindex="0">
+                        <div class="dialog-header">
+                            <span class="dialog-speaker">LUCAS M YABIKU</span>
+                            <span class="dialog-code">MATRÍCULA: 41891</span>
+                        </div>
+                        <p class="dialog-text">
+                            "Estudo no <strong>Instituto Educacional Raphael Di Santo</strong>, estou no <strong>segundo ano do ensino médio técnico</strong> no curso de <strong>Tecnologia da Informação</strong> e tenho <strong>16 anos</strong>."
+                        </p>
+                        <p class="dialog-text secondary-text">
+                            "Ao longo da minha formação técnica, desenvolvi e aprofundei vivência prática nas áreas mais vitais da TI: desenvolvimento de código limpo, suporte computacional de alto nível, estruturação relacional de bancos de dados, arquitetura de software, administração de sistemas operacionais e configuração produtiva de softwares essenciais."
+                        </p>
+                    </div>
+
+                    <!-- Bloco de Disciplinas -->
+                    <div class="p5-skills-section">
+                        <h3 class="skills-section-title">
+                            <span class="text-red">✦</span> ÁREAS EXPERIMENTADAS & DOMINADAS
+                        </h3>
+                        <p class="skills-section-desc">
+                            Competências técnicas praticadas e comprovadas em laboratório e projetos:
+                        </p>
+
+                        <div class="p5-equipped-chips">
+                            <div class="p5-chip-card" data-spotlight-target tabindex="0">
+                                <span class="chip-slot">ÁREA 01</span>
+                                <span class="chip-name">PROGRAMAÇÃO</span>
+                            </div>
+                            <div class="p5-chip-card" data-spotlight-target tabindex="0">
+                                <span class="chip-slot">ÁREA 02</span>
+                                <span class="chip-name">SUPORTE EM INFORMÁTICA</span>
+                            </div>
+                            <div class="p5-chip-card" data-spotlight-target tabindex="0">
+                                <span class="chip-slot">ÁREA 03</span>
+                                <span class="chip-name">BANCO DE DADOS</span>
+                            </div>
+                            <div class="p5-chip-card" data-spotlight-target tabindex="0">
+                                <span class="chip-slot">ÁREA 04</span>
+                                <span class="chip-name">DESENVOLVIMENTO DE SOFTWARE</span>
+                            </div>
+                            <div class="p5-chip-card" data-spotlight-target tabindex="0">
+                                <span class="chip-slot">ÁREA 05</span>
+                                <span class="chip-name">GESTÃO DE COMPUTADORES E SOS</span>
+                            </div>
+                            <div class="p5-chip-card" data-spotlight-target tabindex="0">
+                                <span class="chip-slot">ÁREA 06</span>
+                                <span class="chip-name">OPERAÇÃO DE APLICATIVOS</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Botões de Ação Persona 5 -->
+                    <div class="p5-page-actions">
+                        <a href="projetos.html" class="p5-cta-btn primary" data-nav-page="projetos.html" data-spotlight-target>
+                            <span class="btn-text">VER PROJETOS TÉCNICOS</span>
+                            <span class="btn-arrow">➔</span>
+                        </a>
+                        <a href="contato.html" class="p5-cta-btn" data-nav-page="contato.html" data-spotlight-target>
+                            <span class="btn-text">FALE COMIGO</span>
+                        </a>
+                        <a href="index.html" class="p5-cta-btn return-btn" data-nav-page="index.html" data-spotlight-target>
+                            <span class="btn-text">◀ VOLTAR AO INÍCIO</span>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Script único -->
+    <script src="script.js"></script>
+</body>
+</html>

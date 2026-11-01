@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas M Yabiku | CONTATO // Comunicação Direta</title>
+    <meta name="description" content="Canal de comunicação direta com Lucas M Yabiku - Estudante Técnico de TI no Instituto Raphael Di Santo.">
+
+    <!-- Google Fonts: Anton (P5 Titles), Bebas Neue, Space Grotesk, Space Mono e Arsenal -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <!-- Folha de estilo única do portfólio -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-subpage">
+
+    <!-- Filtro SVG para textura de filme analógico e Refração Líquida -->
+    <svg class="global-svg-filters" aria-hidden="true">
+        <filter id="film-grain">
+            <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch" result="noise" />
+            <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.15 0" />
+        </filter>
+        <!-- Filtro de Refração e Ondulação Líquida em Tela Cheia (inspirado no Nothin') -->
+        <filter id="contact-liquid-filter" x="-20%" y="-20%" width="140%" height="140%">
+            <feTurbulence id="liquidTurbulence" type="fractalNoise" baseFrequency="0.016 0.024" numOctaves="2" result="waterNoise" seed="4" />
+            <feDisplacementMap id="liquidDisplacement" in="SourceGraphic" in2="waterNoise" scale="0" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+    </svg>
+
+    <!-- Canvas de Ondulações Líquidas em Tela Cheia (100vw x 100vh) -->
+    <canvas id="contactRainCanvas" class="contact-rain-canvas" aria-hidden="true"></canvas>
+
+    <!-- Overlay de Textura de Grão e Halftone -->
+    <div class="grain-overlay" aria-hidden="true"></div>
+
+    <!-- Faixa vermelha diagonal de transição de tela -->
+    <div class="p5-wipe-transition" id="pageWipe" aria-hidden="true">
+        <div class="wipe-band"></div>
+        <div class="wipe-text">LUCAS M YABIKU</div>
+    </div>
+
+    <!-- Cursor de mira personalizada -->
+    <div class="p5-cursor" id="customCursor" aria-hidden="true">
+        <div class="reticle-core"></div>
+        <div class="reticle-lines">
+            <span class="line-t"></span>
+            <span class="line-b"></span>
+            <span class="line-l"></span>
+            <span class="line-r"></span>
+        </div>
+        <div class="reticle-text" id="cursorLabel">FOCO</div>
+    </div>
+
+    <!-- CABEÇALHO FIXO -->
+    <header class="site-header" id="header">
+        <div class="header-inner">
+            <a href="index.html" class="brand-monogram" data-nav-page="index.html">
+                <span class="brand-accent">LMY</span>
+                <span class="brand-sub">/ DEV</span>
+            </a>
+
+            <div class="status-indicator" title="Status de disponibilidade">
+                <span class="status-dot"></span>
+                <span class="status-text">DISPONÍVEL PARA PROJETOS</span>
+            </div>
+
+            <div class="header-meta">
+                <a href="index.html" class="nav-back-link" data-nav-page="index.html">◀ MENU PRINCIPAL</a>
+                <button type="button" class="theme-toggle" id="themeToggle" aria-label="Alternar modo claro e escuro">
+                    <span class="theme-icon theme-sun" aria-hidden="true">☼</span>
+                    <span class="theme-icon theme-moon" aria-hidden="true">☽</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTEÚDO DA PÁGINA: CONTATO (com Refração Líquida em Tela Cheia) -->
+    <main class="subpage-main">
+        <div class="subpage-container liquid-fullscreen-target" id="contactLiquidContent">
+
+            <!-- Banner do Título em Ângulo -->
+            <div class="p5-page-title-banner">
+                <div class="title-meta-tag">
+                    <span class="tag-number">03</span>
+                    <span class="tag-label">CANAL DIRETO // CONTATO</span>
+                </div>
+                <h1 class="p5-page-title">
+                    FALE <span class="text-red">COMIGO</span>
+                </h1>
+                <div class="p5-badge-strip">
+                    <span class="badge-item">INSTITUCIONAL</span>
+                    <span class="badge-item">ESTUDANTE DE TI</span>
+                    <span class="badge-item highlight">16y. // RESPOSTA RÁPIDA</span>
+                </div>
+            </div>
+
+            <!-- Palco Central do Cartão de Contato -->
+            <div class="p5-calling-card-stage">
+                
+                <div class="calling-card-box" id="callingCardBox">
+                    <!-- Brilho vermelho ambiente responsivo à perturbação líquida -->
+                    <div class="card-liquid-ambient" id="cardLiquidAmbient" aria-hidden="true"></div>
+
+                    <div class="card-corner-tag">CANAL DIRETO: 41891</div>
+                    <h2 class="card-prompt-headline">VAMOS CRIAR ALGO RELEVANTE JUNTOS?</h2>
+                    
+                    <p class="card-prompt-sub">
+                        Seja para projetos técnicos de tecnologia da informação, parcerias acadêmicas ou oportunidades na área, estou sempre disponível.
+                    </p>
+
+                    <!-- E-mail Centralizado com Visual Persona 5 e Distorção Líquida -->
+                    <div class="email-display-wrap" id="emailDisplayWrap">
+                        <a href="mailto:41891@raphaeldisanto.com.br" class="huge-email-link" id="emailLink" title="Enviar e-mail para Lucas">
+                            41891@raphaeldisanto.com.br
+                        </a>
+                    </div>
+
+                    <!-- Botão de Cópia sem círculo, sem brilho difuso, estilo Persona 5 -->
+                    <div class="contact-actions">
+                        <button type="button" class="copy-email-btn" id="copyEmailBtn" aria-label="Copiar endereço de e-mail">
+                            <span class="copy-banner">
+                                <span class="copy-label">COPIAR E-MAIL</span>
+                            </span>
+                            <span class="copy-subtitle">Copiar para transferência</span>
+                        </button>
+                        <span class="copy-feedback" id="copyFeedback" aria-live="polite"></span>
+                    </div>
+
+                    <div class="calling-card-footer">
+                        <span>Lucas M <span class="text-red">Yabiku</span></span>
+                        <span>•</span>
+                        <span>16y. // 2º Ano Técnico de TI</span>
+                        <span>•</span>
+                        <span>Instituto Raphael Di Santo</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Botões de Navegação Inferiores -->
+            <div class="p5-page-actions" style="margin-top: 3.5rem;">
+                <a href="index.html" class="p5-cta-btn primary" data-nav-page="index.html">
+                    <span class="btn-text">RETORNAR AO MENU PRINCIPAL</span>
+                    <span class="btn-arrow">➔</span>
+                </a>
+                <a href="sobre.html" class="p5-cta-btn" data-nav-page="sobre.html">
+                    <span class="btn-text">VER PERFIL / SOBRE</span>
+                </a>
+                <a href="projetos.html" class="p5-cta-btn" data-nav-page="projetos.html">
+                    <span class="btn-text">VER PROJETOS TÉCNICOS</span>
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Script único -->
+    <script src="script.js"></script>
+</body>
+</html>
